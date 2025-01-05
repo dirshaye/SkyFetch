@@ -73,6 +73,5 @@ Katkıda bulunmak için bir fork oluşturun, değişikliklerinizi yapın ve bir 
 
 ---
 
-## **GitHub README Formatı**
-Bu dosya, GitHub README.md formatına uygun şekilde düzenlenmiştir. Kopyalayıp projenizin GitHub deposundaki README.md dosyasına yapıştırabilirsiniz.
+
 
