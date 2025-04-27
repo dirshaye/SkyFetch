@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { fetchWeatherData } = require('../dis_api_katmani/openweather'); // Fetch weather data logic
+const { fetchWeatherData } = require('../external_api_layer/openweather'); // Fetch weather data logic
 
 const app = express();
 const PORT = 8000;
@@ -52,6 +52,6 @@ function exampleBusinessLogic(data) {
 
 // Start the server and display a message indicating the role of this layer
 app.listen(PORT, () => {
-    console.log(`Uygulama Katmanı (Application Layer) is running on http://localhost:${PORT}`);
+    console.log(`Application Layer is running on http://localhost:${PORT}`);
     console.log('This layer manages routing, data processing, and communication between services.');
 });

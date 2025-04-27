@@ -13,37 +13,36 @@
         }"
     >
         <header style="background: linear-gradient(90deg, #1e3a8a, #3b82f6); width: 100%; padding: 20px; color: white; text-align: center; font-size: 24px; font-weight: bold; position: fixed; top: 0; z-index: 10;">
-            AnlıkHava
+            SkyFetch
         </header>
         <div class="content-wrapper" style="margin-top: 150px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
             <div class="input-group">
                 <input 
                     v-model="city" 
                     class="form-control" 
-                    placeholder="Şehir adını girin" 
-                    aria-label="Şehir adı" 
+                    placeholder="Enter city name" 
+                    aria-label="City name" 
                 />
                 <button 
                     class="btn btn-primary" 
                     @click="getWeather">
-                    Hava Durumunu Getir
+                    Get Weather
                 </button>
             </div>
             <div v-if="weather" class="card">
-                <h2>{{ weather.city }} İçin Hava Durumu</h2>
-                <p>Sıcaklık: {{ weather.temperature }}</p>
-                <p>Açıklama: {{ weather.description }}</p>
-                <p>Nem: {{ weather.humidity }}%</p>
-                <p>Rüzgar Hızı: {{ weather.windSpeed }} m/s</p>
+                <h2>Weather in {{ weather.city }}</h2>
+                <p>Temperature: {{ weather.temperature }}</p>
+                <p>Description: {{ weather.description }}</p>
+                <p>Humidity: {{ weather.humidity }}%</p>
+                <p>Wind Speed: {{ weather.windSpeed }} m/s</p>
             </div>
             <div v-if="error" class="alert alert-danger mt-4">{{ error }}</div>
         </div>
         <footer style="background: #1e293b; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; font-size: 14px;">
-            MCBU Ocak | © {{ new Date().getFullYear() }}
+            MCBU January | © {{ new Date().getFullYear() }}
         </footer>
     </div>
 </template>
-
 
 <script>
 import axios from 'axios';
@@ -69,7 +68,7 @@ export default {
                     windSpeed: response.data.wind.speed,
                 };
             } catch (err) {
-                this.error = 'Hava durumu bilgisi alınırken bir hata oluştu. Lütfen tekrar deneyin.'; // Error message
+                this.error = 'An error occurred while fetching the weather. Please try again.'; // Error message
             }
         },
     },
